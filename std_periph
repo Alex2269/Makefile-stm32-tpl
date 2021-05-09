@@ -1,0 +1,16 @@
+
+# StdPeriph_Lib=~/stm32lib/
+# mkdir  -p "${StdPeriph_Lib}"
+
+# sfm32f1 Libraries
+# wget http://www.st.com/content/ccc/resource/technical/software/firmware/48/ab/e5/17/0d/79/43/74/stsw-stm32054.zip/files/stsw-stm32054.zip/jcr:content/translations/en.stsw-stm32054.zip -O stm32f1_stdperiph_lib.zip
+# unzip  stm32f1_stdperiph_lib.zip -d "${StdPeriph_Lib}"
+
+# stm32f4 Libraries
+# wget http://www.st.com/content/ccc/resource/technical/software/firmware/e2/a0/0f/e7/bd/4f/4b/da/stm32f4_dsp_stdperiph_lib.zip/files/stm32f4_dsp_stdperiph_lib.zip/jcr:content/translations/en.stm32f4_dsp_stdperiph_lib.zip -O stm32f4_stdperiph_lib.zip
+# unzip  stm32f4_stdperiph_lib.zip -d "${StdPeriph_Lib}"
+
+# rm *.zip
+
+# depends: make cmake gcc g++ gcc-arm-none-eabi gdb-arm-none-eabi libusb-dev
+# apt install make cmake gcc g++ gcc-arm-none-eabi gdb-arm-none-eabi libusb-dev
