@@ -109,7 +109,7 @@ CFLAGS_STD = -c -Os -w -std=gnu17 $(GCCFLAGS)
 CXXFLAGS_STD = -c -Os -w -std=gnu++17 $(GCCFLAGS)
 
 CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) $(CFLAGS_STD) 
-CPPFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) $(CXXFLAGS_STD) 
+CPPFLAGS = $(MCU) $(C_DEFS) $(CPP_INCLUDES) $(OPT) $(CXXFLAGS_STD)
 
 ifeq ($(DEBUG), 1)
 CFLAGS += -g -gdwarf-2
