@@ -86,10 +86,8 @@ AS_INCLUDES =
 # includes
 # Find header directories
 INCDIR = .
-C_INC    =$(shell find -L $(INCDIR) -name '*.h' -exec dirname {} \; | uniq)
-CPP_INC +=$(shell find -L $(INCDIR) -name '*.hpp' -exec dirname {} \; | uniq)
-C_INCLUDES  =$(C_INC:%=-I%)
-CPP_INCLUDES=$(CPP_INC:%=-I%)
+C_INC    =$(shell find -L $(INCDIR) -name '*.h*' -exec dirname {} \; | uniq)
+C_INCLUDES  =$(C_INC:%=-I %)
 
 # compile gcc flags
 ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
@@ -108,7 +106,7 @@ CFLAGS_STD = -c -Os -w -std=gnu17 $(GCCFLAGS)
 CXXFLAGS_STD = -c -Os -w -std=gnu++17 $(GCCFLAGS)
 
 CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) $(CFLAGS_STD) 
-CPPFLAGS = $(MCU) $(C_DEFS) $(CPP_INCLUDES) $(OPT) $(CXXFLAGS_STD)
+CPPFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) $(CXXFLAGS_STD)
 
 ifeq ($(DEBUG), 1)
 CFLAGS += -g -gdwarf-2
